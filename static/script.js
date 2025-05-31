@@ -29,3 +29,17 @@ document.addEventListener("DOMContentLoaded", () => {
       .toLowerCase();                // 대소문자 구분 안함 (선택사항)
   }
 });
+
+if (normalize(userAnswer) === normalize(correctAnswer)) {
+  resultMessage.textContent = "정답입니다! 🎉";
+  resultMessage.style.color = "green";
+
+  // 정답 공개
+  document.getElementById("correct-answer").style.display = "block";
+} else {
+  resultMessage.textContent = "틀렸어요. 다시 한 번 생각해보세요!";
+  resultMessage.style.color = "red";
+
+  // 틀리면 정답은 계속 숨김
+  document.getElementById("correct-answer").style.display = "none";
+}
