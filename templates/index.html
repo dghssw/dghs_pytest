@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>야 너도 파이썬?</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+  <div class="container">
+    <h1>야 너도 파이썬?</h1>
+    
+    <div class="question-box">
+      <h2>아래 파이썬 코드의 출력 결과를 예측해보세요!</h2>
+      <pre id="code-snippet">{{ question }}</pre>
+    </div>
+
+    <div class="answer-box">
+      <label for="student-answer">당신의 예측:</label><br>
+      <textarea id="student-answer" rows="4" placeholder="예: Hello\nWorld"></textarea>
+      <br>
+      <button id="check-answer">정답 확인</button>
+    </div>
+
+    <div class="result-box">
+      <h3>결과</h3>
+      <p id="result-message"></p>
+      <p><strong>정답:</strong> <span id="correct-answer">{{ answer }}</span></p>
+    </div>
+  </div>
+
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
